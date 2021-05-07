@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
-const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,6 +22,7 @@ const sess = {
 
 app.use(session(sess));
 
+const helpers = require('./utils/helpers');
 
 const hbs = exphbs.create({helpers});
 
